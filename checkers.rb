@@ -15,6 +15,7 @@ puts "⬜⬛⬜⬛⬜⬛⬜⬛⬜⬛\n\n"
 loop do # keeps running until the user wants to exit the leaderboard
     # exit into main flow if user chooses to play checkers
     break if $prompt.select("🤔What would you like to do?", {"👉Play checkers" => true, "👉See leaderboard" => false})
+    system("clear") || system("cls")
     leaderboard = Player.order(win_count: :desc).limit(5)
     puts "\n*******🔥🔥LEADERBOARD🔥🔥*********"
     puts "\nWins.....Player....................."
@@ -26,7 +27,7 @@ loop do # keeps running until the user wants to exit the leaderboard
     $prompt.keypress("🚪🚶Press any key to return to menu....")
 end
 
-
+system("clear") || system("cls")
 # finds/creates and greets player 1
 puts "✨Player 1: What is your name?✨"
 player_1 = Player.find_or_create_by_name(gets.chomp)
