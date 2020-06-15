@@ -111,6 +111,7 @@ class Board < ActiveRecord::Base # instances of this class are stored in the boa
             else # input is not properly formatted
                 # Check to see if the user wants to exit the program 
                 if(input == "EXIT")
+                    self.save
                     exit(0)
                 end
                 puts "🥺Please enter your move in the proper format, ex. 'A1:h8'"
